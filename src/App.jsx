@@ -1,15 +1,32 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
-import {Button} from './components/ui/button'
+import UserDisplay from './UserDisplay';
+
 
 function App() {
 
+  const [count, setCount]=useState(0)
+  console.log("STEP 1")
+
+  const handleCountClick=()=>{
+    let temp=count
+    temp++
+    setCount(temp)
+  }
+
+
+  useEffect(()=>{
+    console.log("STEP 2")
+  },[])
+
   return (
-    <>
-    <h2>Welcome to Bridge for Developers</h2>
-    <h3>Happy Coding</h3>
-    <Button>Click me</Button>
-    </>
+    <div className='w-full'>
+      <>{console.log("STEP 3")}</>
+      <p onClick={handleCountClick}>Click me </p> 
+      <UserDisplay/>
+
+    </div>
+   
   )
 }
 
