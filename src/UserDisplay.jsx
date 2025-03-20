@@ -1,8 +1,11 @@
 // UserDisplay.jsx
 import { useState, useEffect } from 'react';
 import './UserDisplay.css';
+import UserTest from './components/UsersContextTest';
 
-function UserDisplay() {
+function UserDisplay({saveUsers}) {
+  console.log("USER DISPLAY", saveUsers)
+
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -18,6 +21,7 @@ function UserDisplay() {
       
     const filteredUsers=users.filter((val, idx)=>val.name.includes(userInput))
     setUsers(filteredUsers)
+   
     // TRY AND DEBUG THIS .... 
 
   },[userInput])
@@ -32,6 +36,7 @@ function UserDisplay() {
       })
       .then(data => {
         console.log("DATA ",data)
+        saveUsers(data)
         setUsers(data);
         setLoading(false);
       })
@@ -115,6 +120,7 @@ function UserDisplay() {
           </div>
         ))}
       </div>
+      
     </div>
   );
 }
