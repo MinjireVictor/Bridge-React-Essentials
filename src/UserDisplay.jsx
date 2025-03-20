@@ -4,8 +4,7 @@ import './UserDisplay.css';
 import UserTest from './components/UsersContextTest';
 
 function UserDisplay({saveUsers}) {
-  console.log("USER DISPLAY", saveUsers)
-
+ 
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

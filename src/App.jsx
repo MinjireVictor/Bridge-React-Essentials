@@ -1,13 +1,13 @@
 
 import './App.css'
-import UserTest from './components/UsersContextTest'
+import UsersContextTest from './components/UsersContextTest'
 
 
 
 function App() {
   return (
     <div className='w-full flex flex-row justify-between gap-2'> 
-      <UserTest/>
+      <UsersContextTest/>
     </div>   
   )
 }

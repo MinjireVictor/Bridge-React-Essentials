@@ -4,6 +4,7 @@ import UserDisplay from "../UserDisplay";
 
 // Importing UserContext from UsersContext.js so we can access the context
 import { UserContext } from "../UsersContext";
+import UserContextTestB from "./UsersContextTestB";
 
 // Importing useContext from React, which allows us to access values from a context
 import { useContext } from 'react';
@@ -16,13 +17,14 @@ const UsersContextTest = () => {
 
     // Logging the current list of users to the console
     // This helps us debug and check what data is currently stored in the context
-    console.log("USERS IN THE CONTEXT ", users);
+    console.log("USERS IN THE CONTEXT A", users);
 
     return (
         // A container div with a specific width and height, defining the UI layout
         <div className="w-[300px] h-[400px]">
             {/* A heading displaying "Users" */}
             <h1>Users</h1>
+            <UserContextTestB />
 
             {/* Rendering the UserDisplay component */}
             {/* Passing the setUsers function as a prop named "saveUsers" */}
